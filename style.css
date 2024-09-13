@@ -1,18 +1,22 @@
-:root{
-    --bcg-color: #001122;
-    --primary-color: #155e75;
-    --border-radius: 8px;
-    --secondary-color: #fff;
-    --border-color: #7fb7c9;
+:root {
+    --bcg-color: #121212; /* Dark background */
+    --primary-color: #2196F3; /* Vibrant blue */
+    --secondary-color: #FFFFFF; /* White */
+    --accent-color: #FF9800; /* Orange accent */
+    --border-radius: 12px; /* More rounded borders */
+    --border-color: #00BCD4; /* Cyan border */
+    --hover-color: #00E676; /* Hover green */
+    --text-color: #F5F5F5; /* Light text */
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
-body{
+body {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -21,79 +25,139 @@ body{
     background-color: var(--bcg-color);
 }
 
-.box{
+.box {
     background-color: var(--primary-color);
     padding: 30px;
     width: 400px;
     border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: transform 0.2s ease;
 }
 
-.qr-header h1{
-    font-size: 26px;
+.box:hover {
+    transform: translateY(-5px); /* Subtle hover effect */
+}
+
+.qr-header h1 {
+    font-size: 28px;
     text-align: center;
     color: var(--secondary-color);
     margin-bottom: 24px;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.qr-header input{
+.qr-header input {
     width: 100%;
     margin-block: 12px;
 }
 
-.qr-header input, select{
-    padding: 8px;
+.qr-header input, select {
+    padding: 10px;
     border-radius: var(--border-radius);
     font-size: 18px;
     outline: none;
     border: 2px solid var(--border-color);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: border-color 0.3s ease;
 }
 
-.qr-header label{
-    color: var(--secondary-color);
+.qr-header input:focus, select:focus {
+    border-color: var(--hover-color); /* Change border color on focus */
+}
+
+.qr-header label {
+    color: var(--text-color);
     font-size: 20px;
 }
 
-.qr-header div{
+.qr-header div {
     display: flex;
     justify-content: space-between;
 }
 
-.qr-footer{
+.qr-footer {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
-.qr-footer a{
-    background-color: var(--secondary-color);
+
+.qr-footer a {
+    background-color: var(--accent-color);
     text-decoration: none;
     font-size: 20px;
     padding: 14px 36px;
-    margin-inline: 2px;
-    color: var(--primary-color);
+    margin-inline: 5px;
+    color: var(--secondary-color);
     font-weight: 600;
     border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
 }
 
-.qr-body{
+.qr-footer a:hover {
+    background-color: var(--hover-color); /* Change button color on hover */
+}
+
+.qr-body {
     display: grid;
     place-items: center;
-    padding:20px;
+    padding: 20px;
 }
 
-.qr-body img{
+.qr-body img {
     max-width: 100%;
     max-height: 100%;
     margin-block: 10px;
     padding: 20px;
-    border: 0.5px solid var(--border-color);
+    border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
 }
 
-@media screen and (max-width:520px){
-    .box{
+.qr-share {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.qr-share button {
+    background-color: var(--accent-color);
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    color: var(--secondary-color);
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.qr-share button:hover {
+    background-color: var(--hover-color); /* Hover effect */
+}
+
+.qr-share a {
+    display: block;
+    margin-top: 10px;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 16px;
+    background-color: var(--primary-color);
+    padding: 10px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease;
+}
+
+.qr-share a:hover {
+    background-color: var(--hover-color); /* Hover effect on share links */
+}
+
+@media screen and (max-width:520px) {
+    .box {
         width: 80%;
     }
-    .qr-footer a{
+    .qr-footer a {
         padding: 12px;
         font-size: 16px;
     }
