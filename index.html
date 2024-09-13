@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>QR Code Generator | Code Traversal</title>
+    <title>QR Code Generator</title>
 </head>
 <body>
     <div class="box">
@@ -32,6 +32,14 @@
         <div class="qr-footer">
             <a href="" id="generateBtn">Generate</a>
             <a href="" id="downloadBtn" download="QR_Code.png">Download</a>
+        </div>
+        <div class="qr-share">
+            <button id="shareBtn">Share QR Code</button>
+            <div id="share-options" style="display:none;">
+                <a href="#" id="shareWhatsapp" target="_blank">Share on WhatsApp</a>
+                <a href="#" id="shareFacebook" target="_blank">Share on Facebook</a>
+                <a href="#" id="shareTwitter" target="_blank">Share on Twitter</a>
+            </div>
         </div>
     </div>
 
